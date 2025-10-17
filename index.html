@@ -1,132 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Harshad Barber Shop</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background: #f9f9f9;
-      color: #333;
-    }
-    header {
-      background: #222;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
-    nav {
-      margin-top: 10px;
-    }
-    nav a {
-      color: #fff;
-      margin: 0 10px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      color: #ff9800;
-    }
-    .hero {
-      background: url('https://images.unsplash.com/photo-1599474926011-54e0d7ad7ecb?auto=format&fit=crop&w=1200&q=60') no-repeat center center/cover;
-      height: 300px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
-    }
-    .hero h2 {
-      font-size: 2.5rem;
-    }
-    section {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background: #fff;
-      border-radius: 8px;
-      padding: 20px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-    .card h3 {
-      margin-top: 0;
-      color: #222;
-    }
-    .contact {
-      background: #222;
-      color: #fff;
-      text-align: center;
-      padding: 30px;
-      border-radius: 8px;
-    }
-    footer {
-      text-align: center;
-      padding: 15px;
-      background: #111;
-      color: #aaa;
-      margin-top: 20px;
-    }
-  </style>
+  <meta charset="utf-8">
+  <title>Barber Shop - Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-  <header>
-    <h1>Harshad Barber Shop</h1>
-    <nav>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
+  <header class="header">
+    <div class="brand" id="shop-name">Barber Shop</div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="book.html">Book Appointment</a>
+      <a href="admin.html">Admin</a>
     </nav>
   </header>
 
-  <div class="hero">
-    <h2>Style That Fits You ✂️</h2>
+  <div class="container">
+    <div class="card">
+      <h1>Welcome to <span id="shop-name-title">Classic Cuts</span></h1>
+      <p class="small">Best barber shop in town — quick appointments, experienced barbers.</p>
+    </div>
+
+    <h2 style="margin-top:20px">Our Services</h2>
+    <div id="services-container" class="services"></div>
+
+    <div style="margin-top:30px" class="card">
+      <h3>Book Now</h3>
+      <p class="small">Quick link to book:</p>
+      <a class="btn" href="book.html">Book Appointment</a>
+    </div>
   </div>
 
-  <section id="services">
-    <h2 style="text-align:center;">Our Services</h2>
-    <div class="services">
-      <div class="card">
-        <h3>Haircut</h3>
-        <p>Classic, modern, and trendy cuts tailored to your look.</p>
-        <p><strong>₹200</strong></p>
-      </div>
-      <div class="card">
-        <h3>Beard Trim</h3>
-        <p>Sharp, clean, and stylish beard grooming.</p>
-        <p><strong>₹150</strong></p>
-      </div>
-      <div class="card">
-        <h3>Facial</h3>
-        <p>Relax and refresh with our premium facials.</p>
-        <p><strong>₹300</strong></p>
-      </div>
+  <footer class="footer">
+    <div>Contact: +91 98765 43210 • Address: 123 Barber Lane, City</div>
+    <div style="margin-top:8px">
+      <a href="#" style="color:#fff;margin-right:8px">Instagram</a>
+      <a href="#" style="color:#fff;margin-right:8px">Facebook</a>
     </div>
-  </section>
-
-  <section id="contact" class="contact">
-    <h2>Book Your Slot</h2>
-    <p>Call us at <strong>+91 98765 43210</strong></p>
-    <p>Or visit: <br> Near Main Market, Ahmedabad</p>
-  </section>
-
-  <footer>
-    <p>© 2025 Harshad Barber Shop | All Rights Reserved</p>
   </footer>
 
+  <!-- Firebase scripts (compat) -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+
+  <!-- Your firebase-config.js (must define firebaseConfig) -->
+  <script src="js/firebase-config.js"></script>
+
+  <!-- app.js contains init and shop info loader -->
+  <script src="js/app.js"></script>
 </body>
 </html>
