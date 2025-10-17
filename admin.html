@@ -1,1 +1,81 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Admin - Barber Shop</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="brand">Classic Cuts - Admin</div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="book.html">Book Appointment</a>
+      <a href="admin.html">Admin</a>
+    </nav>
+  </header>
 
+  <div class="container">
+    <div id="admin-login-area" class="card">
+      <h2>Admin Login</h2>
+      <form id="admin-login-form">
+        <div class="form-row">
+          <label>Email</label>
+          <input type="text" id="admin-email" required>
+        </div>
+        <div class="form-row">
+          <label>Password</label>
+          <input type="password" id="admin-password" required>
+        </div>
+        <div style="display:flex;gap:8px;align-items:center">
+          <button class="btn" type="submit">Sign In</button>
+          <button type="button" onclick="document.getElementById('admin-email').value='';document.getElementById('admin-password').value='';" class="btn" style="background:#666">Clear</button>
+        </div>
+      </form>
+      <p class="small">Note: Create an admin user in Firebase Auth and add their UID to Firestore collection <code>admins</code> (doc id = UID).</p>
+    </div>
+
+    <div id="admin-panel-area" class="card" style="display:none">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <h2>Appointments Dashboard</h2>
+        <div>
+          <button id="admin-logout" class="btn">Logout</button>
+        </div>
+      </div>
+
+      <div class="controls" style="margin-top:12px">
+        <label class="small">Filter Date</label>
+        <input type="date" id="filter-date">
+        <label class="small">Status</label>
+        <select id="filter-status">
+          <option value="all">All</option>
+          <option value="Booked">Booked</option>
+          <option value="Arrived">Arrived</option>
+          <option value="Canceled">Canceled</option>
+        </select>
+        <button id="filter-btn" class="btn">Apply</button>
+        <div class="small" style="margin-left:auto">Showing: <span id="count-display">0</span></div>
+      </div>
+
+      <table class="table" style="margin-top:12px">
+        <thead>
+          <tr><th>Name</th><th>Phone</th><th>Date</th><th>Time</th><th>Status</th><th>Action</th></tr>
+        </thead>
+        <tbody id="appointments-table-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div>Contact: +91 98765 43210</div>
+  </footer>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+
+  <script src="js/firebase-config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
