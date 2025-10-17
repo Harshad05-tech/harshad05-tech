@@ -1,1 +1,23 @@
-
+/* Basic responsive styling for the barber app */
+*{box-sizing:border-box;font-family:Arial, Helvetica, sans-serif}
+body{margin:0;background:#f7f7f9;color:#222}
+.header{background:#111;color:#fff;padding:18px 20px;display:flex;align-items:center;justify-content:space-between}
+.header .brand{font-size:22px;font-weight:700}
+.nav{display:flex;gap:10px}
+.nav a{color:#fff;text-decoration:none;padding:8px 12px;border-radius:6px;background:transparent;border:1px solid rgba(255,255,255,0.06)}
+.container{max-width:1000px;margin:30px auto;padding:0 16px}
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:20px}
+.card{background:#fff;border-radius:10px;padding:16px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+.footer{background:#111;color:#fff;padding:20px;margin-top:40px;text-align:center}
+.form-row{margin-bottom:12px}
+label{display:block;margin-bottom:6px;font-weight:600}
+input[type="text"], input[type="tel"], select, input[type="date"], input[type="time"]{
+  width:100%;padding:10px;border-radius:6px;border:1px solid #ddd;font-size:14px
+}
+.btn{display:inline-block;padding:10px 16px;border-radius:8px;background:#111;color:#fff;border:none;cursor:pointer}
+.table{width:100%;border-collapse:collapse}
+.table th, .table td{padding:8px;border-bottom:1px solid #eee;text-align:left}
+.controls{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.small{font-size:13px;color:#555}
+.center{text-align:center}
+@media(max-width:600px){.header{flex-direction:column;gap:10px;align-items:flex-start}}
